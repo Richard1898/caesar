@@ -1,6 +1,6 @@
 alfavits = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def atšifrettekstarotacija(t, o):# iekodēs burtus
+def atšifret_teksta_rotacija(t, o):# iekodēs burtus
   r = ""
   for burts in t:#cikls lai parveidotu burtu
     if (alfavits.find(burts) == -1):#lai burtu A ,piemēram,izdara X uz vienu burtu pirms
@@ -28,7 +28,7 @@ mode = int(input(w))
 if mode == 1:#ievada noteikta moda iekodet vardu
   text = input("Enter the text: ")
   rotation = int(input("Enter the rotation: "))
-  print("Encrypted: " + atšifrettekstarotacija(text, rotation))
+  print("Encrypted: " + atšifret_teksta_rotacija(text, rotation))
 elif mode == 2:#ievada noteikta moda atsivret kodu
   text = input("Enter the text: ")
   rotation = int(input("Enter the rotation: "))
