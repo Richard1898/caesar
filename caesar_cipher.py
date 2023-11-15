@@ -36,3 +36,42 @@ elif mode == 2:#ievada noteikta moda atsivret kodu
 elif mode == 3:#vairs nav modes ja ievada 3 tad nekas nedos
   print("Bruteforcing...")
   print("But I don't know how to do it, sorry ¯\_(ツ)_/¯")
+
+
+
+
+
+ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+def encrypt_text(text, rotation):
+  encrypted_text = ""
+  for char in text:
+    if (ALPHABET.find(char) == -1):
+      encrypted_text += char
+    else:
+      encrypted_text += (ALPHABET[(ALPHABET.find(char) + rotation) % len(ALPHABET)])
+  return encrypted_text
+def decrypt_text(text, rotation):
+  decrypted_text = ""
+  for char in text:
+    if (ALPHABET.find(char) == -1):
+      decrypted_text += char
+    else:
+      decrypted_text += (ALPHABET[(ALPHABET.find(char) - rotation) % len(ALPHABET)])
+  return decrypted_text
+user_choice_prompt = """
+1. Encrypt text
+2. Decrypt text
+3. Bruteforce all rotations
+Choose mode: """
+mode = int(input(user_choice_prompt))
+if mode == 1:
+  text = input("Enter the text: ")
+  rotation = int(input("Enter the rotation: "))
+  print("Encrypted: " + encrypt_text(text, rotation))
+elif mode == 2:
+  text = input("Enter the text: ")
+  rotation = int(input("Enter the rotation: "))
+  print("Decrypted: " + decrypt_text(text, rotation))
+elif mode == 3:
+  print("Bruteforcing...")
+  print("But I don't know how to do it, sorry ¯\_(ツ)_/¯")
